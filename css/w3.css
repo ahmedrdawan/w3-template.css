@@ -1,0 +1,393 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.continer {
+    width: 90%;
+    margin: 0 auto;
+}
+.main {
+    width: fit-content;
+    margin: 0px auto;
+    border: 2px solid black;
+    padding: 15px 32px;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 35px;
+    z-index: 5;
+}
+.main::after {
+    content: "";
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    translate: 0 -50%;
+    width: 20px;
+    height: 20px;
+    background: #03a9f4;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.main::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    translate: 0 -50%;
+    width: 20px;
+    height: 20px;
+    background: #03a9f4;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+h1 {
+    text-transform: uppercase;
+}
+.main:hover {
+    transition-delay: 0.5s;
+    border: none;
+    color: white;
+}
+.main:hover::before {
+    left: 0px;
+    top: 33px;
+    height: 102%;
+    width: 49%;
+    border-radius: inherit;
+    background: #03a9f4;
+    z-index: -1;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    border-right: 1px solid white;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+.main:hover::after {
+    right: 0px;
+    top: 33px;
+    height: 102%;
+    width: 50%;
+    border-radius: inherit;
+    background: #03a9f4;
+    z-index: -1;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+.main-pad {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.header {
+    padding: 20px 0;
+    background: white;
+    padding: 20px 0;
+    background: white;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+.header .continer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .header .continer {
+        flex-direction: column;
+    }
+    .header .continer .logo {
+        padding-bottom: 20px;
+    }
+}
+.header .continer .logo a {
+    text-decoration: none;
+    color: initial;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.header .continer .logo span {
+    color: #00bcd49c;
+    font-size: 33px;
+    text-transform: uppercase;
+}
+.header .continer .menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+}
+.header .continer .menu ul {
+    list-style: none;
+    display: flex;
+}
+.header .continer .menu ul li a {
+    text-decoration: none;
+    color: #03a9f4;
+    padding: 20px 30px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.header .continer .menu ul li a:hover {
+    background: #3e3ab70a;
+    border-top: 1px solid #03a9f4;
+    outline: none;
+    color: black;
+}
+
+.landing {
+    background-image: url(../images/architect-1.jpg);
+    background-size: cover;
+    height: calc(112vh - 78px);
+    background-position: center;
+    position: relative;
+}
+@media (max-width: 768px) {
+    .landing {
+        height: calc(100vh - 116px);
+    }
+}
+.landing p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    color: #f1f1f1;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+.landing span {
+    text-transform: uppercase;
+    background: black;
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .landing {
+        height: calc(100vh - 116px);
+    }
+    .landing span {
+        display: block;
+        width: fit-content;
+        margin: 0 50px 10px;
+    }
+}
+
+.project .continer .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project .continer .boxs .card {
+    position: relative;
+    box-shadow: 4px 4px 15px #795548;
+}
+.project .continer .boxs .card .image {
+    overflow: hidden;
+}
+
+.project .continer .boxs .card:hover img{
+    transform: rotate(3deg) scale(1.1);
+    -webkit-transform: rotate(3deg) scale(1.1);
+    -moz-transform: rotate(3deg) scale(1.1);
+    -ms-transform: rotate(3deg) scale(1.1);
+    -o-transform: rotate(3deg) scale(1.1);
+}
+.project .continer .boxs img {
+    max-width: 100%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.project .continer .boxs .card p {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 136px;
+    color: white;
+    height: 45px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .content {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    column-gap: 30px;
+    row-gap: 30px;
+}
+.about .content .box {
+    box-shadow: 4px 4px 13px black;
+    overflow: hidden;
+    height: 456px;
+    border-radius: 10px;
+}
+@media (max-width: 650px) {
+    .about .content .box {
+        width: 308px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+.about .content .box img {
+    width: 308px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+ }
+
+.about .content .box h3{
+    padding-bottom: 20px;
+    font-size: 22px;
+    font-weight: 100;
+    padding-left: 5px;
+}
+.about .content .box h4{
+    padding-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    padding-left: 5px;
+}
+.about .content .box p{
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+.about .content .box a {
+    text-decoration: none;
+    color: initial;
+    padding: 16px 30px;
+    display: block;
+    text-align: center;
+    background: #00bcd4;
+    color: white;
+}
+.about .content .box a:hover {
+    color: white;
+    background-color: black;
+}
+
+.contact {
+    height: 110vh;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.contact .continer {
+    padding-top: 65px;
+}
+.contact .continer a {
+    padding: 10px 50px;
+    display: block;
+    text-decoration: none;
+    background: #00bcd4;
+    width: fit-content;
+    margin: 0px auto;
+    color: white;
+    border-radius: 7px;
+}
+.contact .continer a:hover {
+    background-color: black;
+}
+.contact .continer p {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+.contact .continer .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    width: 600px;
+}
+.contact .continer .form input[type="text"]{
+    width: 100%;
+    padding: 15px 35px;
+    border: 2px solid #03a9f4;
+    outline: none;
+    margin-bottom: 20px;
+    color: white;
+    caret-color: white;
+    background-color: black;
+}
+.contact .continer .form input[type="email"] {
+    width: 100%;
+    padding: 15px 35px;
+    border: 2px solid #03a9f4;
+    outline: none;
+    margin-bottom: 20px;
+    color: white;
+    caret-color: white;
+    background-color: black;
+}
+.contact .continer .form textarea[type="text"]{
+    height: 200px;
+    width: 100%;
+    padding: 15px 35px;
+    border: 2px solid #03a9f4;
+    outline: none;
+    margin-bottom: 20px;
+    caret-color: white;
+    color: white;
+    background-color: black;
+}
+::placeholder {
+    color: white;
+}
+
+.image-footer .continer {
+    background-image: url(../images/map.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.footer {
+    background: black;
+    margin-top: 18px;
+}
+.footer h3 {
+    color: white;
+    padding: 25px;
+    text-align: center;
+    font-weight: 100;
+}
+.footer a {
+    color: white;
+    font-weight: 300;
+}
